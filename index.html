@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sean Lorico — Computer Engineering Student</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="loading">
+
+  <!-- ===== Loading Screen ===== -->
+  <div id="loader" class="loader" role="status" aria-live="polite">
+    <div class="loader-scene">
+
+      <div class="speed-lines" aria-hidden="true">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="loader-car" aria-hidden="true">
+        <div class="car-glow"></div>
+        <svg viewBox="0 0 200 70" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="100" cy="60" rx="72" ry="6" fill="#000" opacity="0.35"/>
+          <path d="M12,52 L30,30 L55,20 L95,14 L130,15 L150,22 L178,34 L188,50 L170,50 L166,42 L34,42 L30,50 Z" fill="currentColor"/>
+          <path d="M62,22 L92,17 L118,18 L132,24 L100,26 L70,27 Z" fill="#111111"/>
+          <rect x="8" y="46" width="14" height="4" rx="2" fill="#111111"/>
+          <rect x="178" y="44" width="14" height="4" rx="2" fill="#111111"/>
+          <circle cx="55" cy="52" r="10" fill="#0A0A0A" stroke="currentColor" stroke-width="2"/>
+          <circle cx="150" cy="52" r="10" fill="#0A0A0A" stroke="currentColor" stroke-width="2"/>
+          <rect x="184" y="30" width="5" height="3" fill="#FFFFFF"/>
+        </svg>
+      </div>
+
+      <p class="loader-text" id="loaderText">Igniting V12<span class="loader-dots"><span>.</span><span>.</span><span>.</span></span></p>
+      <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
+      <p class="loader-welcome" id="loaderWelcome" aria-hidden="true">Welcome, <span class="name-flicker">Sean</span></p>
+    </div>
+  </div>
+
+  <!-- ===== Top Nav ===== -->
+  <header class="topnav">
+    <a href="#about" class="logo">Sean <span class="logo-accent">Lorico</span></a>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#tech-stack">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <div class="checker-strip" aria-hidden="true"></div>
+
+  <main class="page">
+
+    <!-- ===== 01 About ===== -->
+    <section id="about" class="section-row reveal">
+      <span class="row-index">01</span>
+      <span class="row-divider" aria-hidden="true"></span>
+      <div class="row-content">
+
+        <div class="hero-top">
+          <div class="hero-photo">
+            <img src="profile.jpg" alt="Portrait of Sean Lorico">
+          </div>
+          <div class="hero-text">
+            <p class="eyebrow">Computer Engineering Student</p>
+            <h1 class="name-headline">
+              Sean<br>
+              Janssenn<br>
+              <em>C. Lorico</em>
+            </h1>
+            <div class="hero-tagline">
+              <p>Building practical software solutions through system design, clean code, and thoughtful problem-solving.</p>
+            </div>
+            <p class="plate">SEAN CPE</p>
+          </div>
+        </div>
+
+        <div class="about-split">
+          <p class="about-lead typewriter">I am a Computer Engineering student from Cebu Institute of Technology &mdash; University.</p>
+          <div class="about-detail">
+            <p>
+              My interests are focused on software development, system
+              design, user experience, and practical technology solutions.
+            </p>
+            <p>
+              I enjoy turning ideas into functional applications while
+              continuously improving my programming, design, and
+              problem-solving skills.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 02 Tech Stack ===== -->
+    <section id="tech-stack" class="section-row reveal">
+      <span class="row-index">02</span>
+      <span class="row-divider" aria-hidden="true"></span>
+      <div class="row-content">
+        <p class="eyebrow">Technology</p>
+        <h2 class="headline headline-sm">My tech stack.</h2>
+
+        <div class="tech-vertical" id="techVertical" aria-label="Technologies I use">
+          <div class="tech-col" data-dir="up">
+            <div class="tech-col-track">
+              <div class="tech-item">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C">
+                <span class="tech-label">C</span>
+              </div>
+              <div class="tech-item">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="C#">
+                <span class="tech-label">C#</span>
+              </div>
+              <div class="tech-item" aria-hidden="true">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="">
+                <span class="tech-label">C</span>
+              </div>
+              <div class="tech-item" aria-hidden="true">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" alt="">
+                <span class="tech-label">C#</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-col" data-dir="down">
+            <div class="tech-col-track">
+              <div class="tech-item">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java">
+                <span class="tech-label">Java</span>
+              </div>
+              <div class="tech-item">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python">
+                <span class="tech-label">Python</span>
+              </div>
+              <div class="tech-item" aria-hidden="true">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="">
+                <span class="tech-label">Java</span>
+              </div>
+              <div class="tech-item" aria-hidden="true">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="">
+                <span class="tech-label">Python</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-col" data-dir="up">
+            <div class="tech-col-track">
+              <div class="tech-item">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React">
+                <span class="tech-label">React</span>
+              </div>
+              <div class="tech-item">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma">
+                <span class="tech-label">Figma</span>
+              </div>
+              <div class="tech-item" aria-hidden="true">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="">
+                <span class="tech-label">React</span>
+              </div>
+              <div class="tech-item" aria-hidden="true">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="">
+                <span class="tech-label">Figma</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-col" data-dir="down">
+            <div class="tech-col-track">
+              <div class="tech-item">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="Supabase">
+                <span class="tech-label">Supabase</span>
+              </div>
+              <div class="tech-item">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS">
+                <span class="tech-label">Tailwind CSS</span>
+              </div>
+              <div class="tech-item" aria-hidden="true">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="">
+                <span class="tech-label">Supabase</span>
+              </div>
+              <div class="tech-item" aria-hidden="true">
+                <img class="tech-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="">
+                <span class="tech-label">Tailwind CSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 Projects ===== -->
+    <section id="projects" class="section-row reveal">
+      <span class="row-index">03</span>
+      <span class="row-divider" aria-hidden="true"></span>
+      <div class="row-content">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="headline headline-sm">My Projects.</h2>
+
+        <div class="project-grid">
+          <button class="project-card" type="button" data-modal="modal-uconvertit">
+            <span class="project-name">U-ConvertIT</span>
+            <span class="project-hint">View project &rarr;</span>
+          </button>
+          <button class="project-card" type="button" data-modal="modal-questgo">
+            <span class="project-name">QuestGo</span>
+            <span class="project-hint">View project &rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 04 Education ===== -->
+    <section id="education" class="section-row reveal">
+      <span class="row-index">04</span>
+      <span class="row-divider" aria-hidden="true"></span>
+      <div class="row-content">
+        <p class="eyebrow">Education</p>
+        <h2 class="headline headline-sm">Where I learned the basics.</h2>
+
+        <div class="edu-timeline">
+          <div class="edu-entry">
+            <div class="edu-text">
+              <p class="edu-years">2023 &ndash; Present</p>
+              <p class="edu-school">Cebu Institute of Technology &mdash; University</p>
+              <p class="edu-course">BS Computer Engineering</p>
+            </div>
+            <div class="edu-logo-circle">
+              <img src="cit.jpg" alt="Cebu Institute of Technology - University logo">
+            </div>
+          </div>
+
+          <div class="edu-entry">
+            <div class="edu-text">
+              <p class="edu-years">2022 &ndash; 2023</p>
+              <p class="edu-school">Asian College of Technology</p>
+              <p class="edu-course">Senior High School</p>
+            </div>
+            <div class="edu-logo-circle">
+              <img src="act.jpg" alt="Asian College of Technology logo">
+            </div>
+          </div>
+
+          <div class="edu-entry">
+            <div class="edu-text">
+              <p class="edu-years">2020 &ndash; 2022</p>
+              <p class="edu-school">Divino Amore Academy</p>
+              <p class="edu-course">Junior High School</p>
+            </div>
+            <div class="edu-logo-circle">
+              <img src="divino.jpg" alt="Divino Amore Academy logo">
+            </div>
+          </div>
+
+          <div class="edu-entry">
+            <div class="edu-text">
+              <p class="edu-years">2015 &ndash; 2019</p>
+              <p class="edu-school">St. Scholastica's Academy</p>
+              <p class="edu-course">Elementary</p>
+            </div>
+            <div class="edu-logo-circle">
+              <img src="scho.jpg" alt="St. Scholastica's Academy logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Contact / Footer ===== -->
+  <footer id="contact" class="section-row footer-row reveal">
+    <span class="row-index">05</span>
+    <span class="row-divider" aria-hidden="true"></span>
+    <div class="row-content">
+      <p class="eyebrow">Contact</p>
+      <h2 class="headline headline-huge">Let's build something.</h2>
+      <ul class="social-links">
+        <li>
+          <a href="https://github.com/your-username" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://facebook.com/your-username" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073"/></svg>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:you@example.com" aria-label="Email" class="social-icon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 4h20v16H2V4zm2 2.236V6h.01L12 12l7.99-6H4zM20 8.66l-8 6-8-6V18h16V8.66z"/></svg>
+          </a>
+        </li>
+      </ul>
+      <p class="copyright">&copy; 2026 Sean Lorico</p>
+    </div>
+  </footer>
+
+  <!-- ===== Project Modals ===== -->
+  <div class="modal-backdrop" id="modal-uconvertit" role="dialog" aria-modal="true" aria-labelledby="uconvertit-title">
+    <div class="modal-panel" tabindex="-1">
+      <button class="modal-close" type="button" data-close aria-label="Close">&times;</button>
+      <p class="modal-tag">Project 01</p>
+      <h3 id="uconvertit-title">U-ConvertIT</h3>
+      <p>
+        A unit conversion tool built to make everyday conversions fast
+        and mistake-free. Replace this with your real description: what
+        it does, who it's for, and what problem it solves.
+      </p>
+      <p class="modal-stack"><strong>Built with:</strong> replace with the tools you used, e.g. React, Tailwind CSS</p>
+      <a class="modal-link" href="#" target="_blank" rel="noopener">View project &rarr;</a>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-questgo" role="dialog" aria-modal="true" aria-labelledby="questgo-title">
+    <div class="modal-panel" tabindex="-1">
+      <button class="modal-close" type="button" data-close aria-label="Close">&times;</button>
+      <p class="modal-tag">Project 02</p>
+      <h3 id="questgo-title">QuestGo</h3>
+      <p>
+        A quest-based app for turning goals or errands into trackable
+        missions. Replace this with your real description: what it does,
+        who it's for, and what problem it solves.
+      </p>
+      <p class="modal-stack"><strong>Built with:</strong> replace with the tools you used, e.g. Supabase, React</p>
+      <a class="modal-link" href="#" target="_blank" rel="noopener">View project &rarr;</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
