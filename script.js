@@ -67,6 +67,28 @@ if (document.readyState === 'complete') {
   window.addEventListener('load', hideLoader);
 }
 
+// ----- Mobile nav toggle -----
+
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (navToggle && navLinks) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('open', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  // Close the menu after tapping a link.
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
 // ----- Project modals -----
 // Each button with [data-modal] opens the matching #id modal-backdrop.
 // Modals close on the close button, backdrop click, or Escape key.

@@ -350,6 +350,40 @@ body:not(.loading) .loader {
   opacity: 1;
 }
 
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--nav-text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ---------- Checkered strip ---------- */
 
 .checker-strip {
@@ -1173,6 +1207,29 @@ body.loaded .plate {
   margin: 0;
 }
 
+.footer-signoff {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.footer-signoff-name {
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.footer-signoff-quote {
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .social-icon:hover,
   .social-icon:focus-visible {
@@ -1374,8 +1431,31 @@ body.loaded .plate {
 }
 
 @media (max-width: 640px) {
+  .nav-toggle {
+    display: flex;
+  }
+
   .nav-links {
-    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--nav-bg);
+    border-bottom: 3px solid var(--accent);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .nav-links.open {
+    max-height: 300px;
+  }
+
+  .nav-links a {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .section-row {
