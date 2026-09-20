@@ -6,15 +6,39 @@
 
 const MIN_LOAD_TIME = 2800; // milliseconds
 const startTime = Date.now();
-const loaderFill = document.getElementById('loaderFill');
+const gaugeProgress = document.getElementById('gaugeProgress');
+const gaugeNeedle = document.getElementById('gaugeNeedle');
+const gaugePercent = document.getElementById('gaugePercent');
 const loaderText = document.getElementById('loaderText');
 const loaderWelcome = document.getElementById('loaderWelcome');
 
-if (loaderFill) {
-  requestAnimationFrame(() => {
-    loaderFill.style.width = '100%';
-  });
+const GAUGE_ARC_LENGTH = 226.19; // matches the 270-degree track's visible arc length
+const REDLINE_THRESHOLD = 0.85;
+
+function animateGauge(duration) {
+  const gaugeStart = performance.now();
+  function frame(now) {
+    const elapsed = now - gaugeStart;
+    const progress = Math.min(elapsed / duration, 1);
+
+    if (gaugeProgress) {
+      gaugeProgress.style.strokeDashoffset = String(GAUGE_ARC_LENGTH * (1 - progress));
+      gaugeProgress.classList.toggle('redline', progress >= REDLINE_THRESHOLD);
+    }
+    if (gaugeNeedle) {
+      const angle = progress * 270 - 135;
+      gaugeNeedle.style.transform = `rotate(${angle}deg)`;
+      gaugeNeedle.classList.toggle('redline', progress >= REDLINE_THRESHOLD);
+    }
+    if (gaugePercent) {
+      gaugePercent.textContent = String(Math.round(progress * 100));
+    }
+    if (progress < 1) requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 }
+
+animateGauge(MIN_LOAD_TIME - 300);
 
 if (loaderText) {
   setTimeout(() => {
@@ -110,50 +134,9 @@ if ('IntersectionObserver' in window && revealTargets.length) {
   revealTargets.forEach((target) => target.classList.add('in-view'));
 }
 
-// ----- Typewriter effect -----
-// The .about-lead sentence types itself out character by character the
-// first time it scrolls into view, with a blinking cursor while typing.
-
-const typewriterEl = document.querySelector('.typewriter');
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-function typeText(el, speed) {
-  const fullText = el.textContent;
-  el.textContent = '';
-  el.classList.add('typing');
-
-  let i = 0;
-  function step() {
-    if (i <= fullText.length) {
-      el.textContent = fullText.slice(0, i);
-      i++;
-      setTimeout(step, speed);
-    } else {
-      el.classList.remove('typing');
-    }
-  }
-  step();
-}
-
-if (typewriterEl) {
-  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
-    // Skip the animation, just show the full text.
-    typewriterEl.classList.remove('typewriter');
-  } else {
-    const typeObserver = new IntersectionObserver(
-      (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            typeText(entry.target, 28);
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.4 }
-    );
-    typeObserver.observe(typewriterEl);
-  }
-}
+// ----- About reveal -----
+// Purely hover/focus driven via CSS (see .about-reveal:hover in
+// styles.css) — no JS needed, so it never gets stuck open.
 
 // ----- Tech stack scroll parallax -----
 // Each column loops vertically on its own (CSS animation on the inner

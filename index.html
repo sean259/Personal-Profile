@@ -33,9 +33,27 @@
         </svg>
       </div>
 
+      <div class="loader-gauge">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle class="gauge-bezel" cx="60" cy="60" r="56" fill="none" stroke="#2A2A2A" stroke-width="2"/>
+          <circle class="gauge-track" cx="60" cy="60" r="48" fill="none" stroke="#1A1A1A" stroke-width="8" stroke-linecap="round" stroke-dasharray="226.19 75.40" transform="rotate(135 60 60)"/>
+          <circle id="gaugeProgress" class="gauge-progress" cx="60" cy="60" r="48" fill="none" stroke="#E30613" stroke-width="8" stroke-linecap="round" stroke-dasharray="226.19 75.40" stroke-dashoffset="226.19" transform="rotate(135 60 60)"/>
+          <g class="gauge-ticks" stroke="#3A3A3A" stroke-width="2">
+            <line x1="23.23" y1="96.77" x2="28.89" y2="91.11"/>
+            <line x1="11.96" y1="40.10" x2="19.35" y2="43.16"/>
+            <line x1="60" y1="8" x2="60" y2="16"/>
+            <line x1="108.04" y1="40.10" x2="100.65" y2="43.16"/>
+            <line x1="96.77" y1="96.77" x2="91.11" y2="91.11"/>
+          </g>
+          <g id="gaugeNeedle" class="gauge-needle">
+            <line x1="60" y1="60" x2="60" y2="20" stroke="#F5F5F5" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="60" cy="60" r="5" fill="#E30613"/>
+          </g>
+        </svg>
+        <div class="gauge-readout"><span id="gaugePercent">0</span><span class="gauge-percent-sign">%</span></div>
+      </div>
       <p class="loader-text" id="loaderText">Igniting V12<span class="loader-dots"><span>.</span><span>.</span><span>.</span></span></p>
-      <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
-      <p class="loader-welcome" id="loaderWelcome" aria-hidden="true">Welcome, <span class="name-flicker">Sean</span></p>
+      <p class="loader-welcome" id="loaderWelcome" aria-hidden="true">Welcome to <span class="name-flicker">My Portfolio</span></p>
     </div>
   </div>
 
@@ -62,36 +80,38 @@
 
         <div class="hero-top">
           <div class="hero-photo">
-            <img src="profile.jpg" alt="Portrait of Sean Lorico">
+            <div class="hero-photo-inner">
+              <img class="photo-main" src="profile.jpg" alt="Portrait of Sean Lorico">
+              <img class="photo-alt" src="profile-alt.jpg" alt="Portrait of Sean Lorico, alternate photo">
+              <span class="photo-shine" aria-hidden="true"></span>
+            </div>
           </div>
           <div class="hero-text">
-            <p class="eyebrow">Computer Engineering Student</p>
+            <p class="eyebrow">Annyeong, I'm</p>
             <h1 class="name-headline">
               Sean<br>
               Janssenn<br>
               <em>C. Lorico</em>
             </h1>
             <div class="hero-tagline">
-              <p>Building practical software solutions through system design, clean code, and thoughtful problem-solving.</p>
+              <p> "Ama iter, non finem."</p>
+              <p> Love the journey not the destination</p>
             </div>
-            <p class="plate">SEAN CPE</p>
+            <div class="about-reveal">
+              <button class="plate" type="button" id="aboutTrigger">About Me</button>
+              <div class="about-collapse" id="aboutCollapse">
+                <div class="about-split">
+                  <p class="about-lead">I am a Computer Engineering student in Cebu Institute of Technology &mdash; University.</p>
+                  <div class="about-detail">
+                    <p>I'm especially drawn to software development, system design, and creating user experiences that actually solve real problems.</p>
+                    <p>I like taking apart problems the same way I like taking apart old gadgets — piece by piece, until I understand exactly how they work.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="about-split">
-          <p class="about-lead typewriter">I am a Computer Engineering student from Cebu Institute of Technology &mdash; University.</p>
-          <div class="about-detail">
-            <p>
-              My interests are focused on software development, system
-              design, user experience, and practical technology solutions.
-            </p>
-            <p>
-              I enjoy turning ideas into functional applications while
-              continuously improving my programming, design, and
-              problem-solving skills.
-            </p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -196,7 +216,7 @@
       <span class="row-index">03</span>
       <span class="row-divider" aria-hidden="true"></span>
       <div class="row-content">
-        <p class="eyebrow">Selected work</p>
+        <p class="eyebrow">What I've Built</p>
         <h2 class="headline headline-sm">My Projects.</h2>
 
         <div class="project-grid">
@@ -206,7 +226,7 @@
           </button>
           <button class="project-card" type="button" data-modal="modal-questgo">
             <span class="project-name">QuestGo</span>
-            <span class="project-hint">View project &rarr;</span>
+            <span class="project-hint">In development</span>
           </button>
         </div>
       </div>
@@ -225,10 +245,13 @@
             <div class="edu-text">
               <p class="edu-years">2023 &ndash; Present</p>
               <p class="edu-school">Cebu Institute of Technology &mdash; University</p>
-              <p class="edu-course">BS Computer Engineering</p>
+              <p class="edu-course">College</p>
             </div>
-            <div class="edu-logo-circle">
-              <img src="cit.jpg" alt="Cebu Institute of Technology - University logo">
+            <div class="edu-reveal">
+              <div class="edu-logo-circle">
+                <img src="cit.jpg" alt="Cebu Institute of Technology - University logo">
+              </div>
+              <p class="edu-address">N. Bacalso Avenue, Cebu City</p>
             </div>
           </div>
 
@@ -238,8 +261,11 @@
               <p class="edu-school">Asian College of Technology</p>
               <p class="edu-course">Senior High School</p>
             </div>
-            <div class="edu-logo-circle">
-              <img src="act.jpg" alt="Asian College of Technology logo">
+            <div class="edu-reveal">
+              <div class="edu-logo-circle">
+                <img src="act.jpg" alt="Asian College of Technology logo">
+              </div>
+              <p class="edu-address">Bulacao, Talisay City, Cebu </p>
             </div>
           </div>
 
@@ -249,8 +275,11 @@
               <p class="edu-school">Divino Amore Academy</p>
               <p class="edu-course">Junior High School</p>
             </div>
-            <div class="edu-logo-circle">
-              <img src="divino.jpg" alt="Divino Amore Academy logo">
+            <div class="edu-reveal">
+              <div class="edu-logo-circle">
+                <img src="divino.jpg" alt="Divino Amore Academy logo">
+              </div>
+              <p class="edu-address">Mohon, Talisay City, Cebu</p>
             </div>
           </div>
 
@@ -260,8 +289,11 @@
               <p class="edu-school">St. Scholastica's Academy</p>
               <p class="edu-course">Elementary</p>
             </div>
-            <div class="edu-logo-circle">
-              <img src="scho.jpg" alt="St. Scholastica's Academy logo">
+            <div class="edu-reveal">
+              <div class="edu-logo-circle">
+                <img src="scho.jpg" alt="St. Scholastica's Academy logo">
+              </div>
+              <p class="edu-address"> Lagtang, Talisay, Cebu</p>    
             </div>
           </div>
         </div>
@@ -279,17 +311,17 @@
       <h2 class="headline headline-huge">Let's build something.</h2>
       <ul class="social-links">
         <li>
-          <a href="https://github.com/your-username" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+          <a href="https://github.com/sean259" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
           </a>
         </li>
         <li>
-          <a href="https://facebook.com/your-username" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
+          <a href="https://www.facebook.com/sean.lorico.5" target="_blank" rel="noopener" aria-label="Facebook" class="social-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073"/></svg>
           </a>
         </li>
         <li>
-          <a href="mailto:you@example.com" aria-label="Email" class="social-icon">
+          <a href="mailto:seanlorico9@gmail.com" aria-label="Email" class="social-icon">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 4h20v16H2V4zm2 2.236V6h.01L12 12l7.99-6H4zM20 8.66l-8 6-8-6V18h16V8.66z"/></svg>
           </a>
         </li>
@@ -304,13 +336,19 @@
       <button class="modal-close" type="button" data-close aria-label="Close">&times;</button>
       <p class="modal-tag">Project 01</p>
       <h3 id="uconvertit-title">U-ConvertIT</h3>
+      <img class="modal-image" src="uconvertit.jpg" alt="Screenshot of U-ConvertIT">
       <p>
-        A unit conversion tool built to make everyday conversions fast
-        and mistake-free. Replace this with your real description: what
-        it does, who it's for, and what problem it solves.
+        An AI-powered academic productivity tool built for 
+        students. Features a Paraphraser, PDF Converter, Humanizer, 
+        Quiz Maker, and OCR — all in one platform. Built to make studying smarter and faster.
       </p>
-      <p class="modal-stack"><strong>Built with:</strong> replace with the tools you used, e.g. React, Tailwind CSS</p>
-      <a class="modal-link" href="#" target="_blank" rel="noopener">View project &rarr;</a>
+      <p class="modal-stack-label"><strong>Built with</strong></p>
+      <div class="modal-stack-chips">
+        <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="">React</span>
+        <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="">Python</span>
+        <span class="stack-chip"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" alt="">Supabase</span>
+      </div>
+      <a class="modal-link" href="https://u-convertit-frontend.vercel.app/" target="_blank" rel="noopener">View project &rarr;</a>
     </div>
   </div>
 
@@ -320,12 +358,12 @@
       <p class="modal-tag">Project 02</p>
       <h3 id="questgo-title">QuestGo</h3>
       <p>
-        A quest-based app for turning goals or errands into trackable
-        missions. Replace this with your real description: what it does,
-        who it's for, and what problem it solves.
+       QuestGo is a platform that connects CIT-U students who need help with tasks 
+       to other students who are willing to complete those tasks for a reward. Students 
+       can post, browse, and accept “Quests,” then communicate and coordinate meetups through 
+       the platform. The system tracks the Quest from Available → Accepted → In Progress → Completed, with unaccepted Quests expiring after 30 minutes.
       </p>
-      <p class="modal-stack"><strong>Built with:</strong> replace with the tools you used, e.g. Supabase, React</p>
-      <a class="modal-link" href="#" target="_blank" rel="noopener">View project &rarr;</a>
+      <span class="modal-status">&#128679; Under development</span>
     </div>
   </div>
 
